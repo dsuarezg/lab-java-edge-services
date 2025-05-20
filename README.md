@@ -42,4 +42,6 @@ Once you finish the assignment, submit a URL link to your repository or your pul
 
 <br>
 
+![img.png](img.png)
+
 **Note**: In this lab, we will use the code created in the previous lab. If you have not been able to complete it, you may ask your teacher for the solution of the previous lab so you can work with this one.
