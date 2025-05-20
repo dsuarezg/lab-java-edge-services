@@ -7,6 +7,12 @@ import org.springframework.cloud.openfeign.FeignClient;
 
 @FeignClient("student-info-service")
 public interface StudentInfoServiceClient {
+    /**
+     * Retrieves student information for the specified student ID from the student info service.
+     *
+     * @param studentId the unique identifier of the student to retrieve
+     * @return a StudentDTO containing the student's details
+     */
     @GetMapping("/api/student/{studentId}")
     StudentDTO getStudentId(@PathVariable Long studentId);
 }
