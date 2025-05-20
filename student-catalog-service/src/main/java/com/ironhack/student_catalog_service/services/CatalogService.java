@@ -25,6 +25,14 @@ public class CatalogService {
     @Autowired
     private GradesDataServiceClient gradesDataServiceClient;
 
+    /**
+     * Builds a catalog of students and their grades for a given course code.
+     *
+     * Retrieves course details and associated student grades, assembling a catalog with the course name and a list of students and their grades. Returns {@code null} if the course does not exist.
+     *
+     * @param courseCode the unique identifier of the course
+     * @return a {@link Catalog} containing the course name and student grades, or {@code null} if the course is not found
+     */
     public Catalog getCatalogByCourseCode(Long courseCode) {
 //        CourseDTO course = restTemplate.getForObject(
 //                "http://grades-data-service/api/course/" + courseCode,
