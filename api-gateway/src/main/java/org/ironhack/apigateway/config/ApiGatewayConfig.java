@@ -8,6 +8,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ApiGatewayConfig {
 
+    /**
+     * Defines custom routing rules for the API Gateway, forwarding requests to appropriate microservices based on path patterns.
+     *
+     * Configures routes for student, course, grade, and catalog endpoints, directing them to their respective services using load-balanced URIs.
+     *
+     * @return a RouteLocator with the configured routes
+     */
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder){
         return builder.routes()

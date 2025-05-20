@@ -21,10 +21,22 @@ public class CourseService {
     private GradeRepository gradeRepository;
 
 
+    /**
+     * Retrieves a course by its course code.
+     *
+     * @param courseCode the unique identifier of the course
+     * @return the Course entity if found, or null if no course exists with the given code
+     */
     public Course getCourseByCode(Long courseCode) {
         return courseRepository.findById(courseCode).orElse(null);
     }
 
+    /**
+     * Retrieves the course name and associated grades for a given course code.
+     *
+     * @param courseCode the unique identifier of the course
+     * @return a CourseGradeDTO containing the course name and list of grades, or null if the course does not exist
+     */
     public CourseGradeDTO getCourseGrade(Long courseCode) {
         Course course = getCourseByCode(courseCode);
         if (course == null){

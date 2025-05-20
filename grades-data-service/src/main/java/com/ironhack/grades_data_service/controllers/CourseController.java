@@ -19,12 +19,24 @@ public class CourseController {
     private CourseService courseService;
 
 
+    /**
+     * Retrieves a course by its code.
+     *
+     * @param courseCode the unique code identifying the course
+     * @return a ResponseEntity containing the Course and HTTP status 200 (OK)
+     */
     @GetMapping("/{courseCode}")
     public ResponseEntity<Course> getCourse(@PathVariable Long courseCode) {
         Course course = courseService.getCourseByCode(courseCode);
         return new ResponseEntity<>(course, HttpStatus.OK);
     }
 
+    /**
+     * Retrieves grade information for a specific course by its code.
+     *
+     * @param courseCode the unique identifier of the course
+     * @return a ResponseEntity containing the CourseGradeDTO for the specified course and HTTP status 200 (OK)
+     */
     @GetMapping("/{courseCode}/grade")
     public ResponseEntity<CourseGradeDTO> getGradesForCourse(@PathVariable Long courseCode) {
         CourseGradeDTO grades = courseService.getCourseGrade(courseCode);

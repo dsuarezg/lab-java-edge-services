@@ -8,6 +8,11 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class AppConfig {
 
+    /**
+     * Creates a load-balanced RestTemplate bean for making HTTP requests.
+     *
+     * @return a RestTemplate instance configured for client-side load balancing
+     */
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
