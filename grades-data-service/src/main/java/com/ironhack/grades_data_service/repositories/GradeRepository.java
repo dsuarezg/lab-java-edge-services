@@ -8,6 +8,12 @@ import java.util.List;
 
 @Repository
 public interface GradeRepository extends JpaRepository<Grade, Long> {
-    List<Grade> findByCourse_CourseCode(Long courseCode);
+    /****
+ * Retrieves all grades associated with a specific course code.
+ *
+ * @param courseCode the unique identifier of the course
+ * @return a list of grades for the specified course code
+ */
+List<Grade> findByCourse_CourseCode(Long courseCode);
 
 }

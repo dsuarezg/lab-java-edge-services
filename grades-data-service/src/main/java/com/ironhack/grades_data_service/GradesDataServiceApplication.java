@@ -11,6 +11,11 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class GradesDataServiceApplication {
+    /**
+     * Launches the Grades Data Service Spring Boot application.
+     *
+     * @param args command-line arguments passed to the application
+     */
     public static void main(String[] args) {
         SpringApplication.run(GradesDataServiceApplication.class, args);
     }

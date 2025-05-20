@@ -20,6 +20,14 @@ public class CatalogService {
     @Autowired
     private RestTemplate restTemplate;
 
+    /**
+     * Retrieves a catalog of students and their grades for a given course code.
+     *
+     * Fetches course information and associated grades from external services. For each grade, retrieves the corresponding student details and compiles a list of student-grade entries. Returns a Catalog containing the course name and the list of student grades, or null if the course does not exist.
+     *
+     * @param courseCode the unique identifier of the course
+     * @return a Catalog object with course name and student grades, or null if the course is not found
+     */
     public Catalog getCatalogByCourseCode(Long courseCode) {
         CourseDTO course = restTemplate.getForObject(
                 "http://grades-data-service/api/course/" + courseCode,

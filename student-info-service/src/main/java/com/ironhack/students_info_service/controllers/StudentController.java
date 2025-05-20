@@ -13,6 +13,12 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
 
+    /**
+     * Retrieves a student by their unique ID.
+     *
+     * @param studentId the ID of the student to retrieve
+     * @return a ResponseEntity containing the student data if found, or an empty result if not
+     */
     @GetMapping("/{studentId}")
     @ResponseStatus(HttpStatus.FOUND)
     public ResponseEntity<?> getStudentById(@PathVariable Long studentId){
